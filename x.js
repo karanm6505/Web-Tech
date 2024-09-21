@@ -7,6 +7,7 @@ c = txt.substring(1,3);
 document.write(c+"<br>");
 d = txt.substr(1,1);
 document.write(d+"<br>");
+document.writeln(d+"<br>")
 document.write(txt.slice(1,3)+"<br>");
 document.write(txt.toUpperCase()+"<br>");
 document.write(txt.toLowerCase()+"<br>");
