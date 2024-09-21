@@ -1,0 +1,26 @@
+<html>
+    <body>
+    <div id="demo1"></div>
+    <div id="demo2"></div>
+    <script>
+        var text = "<bookstore>" + "<book>" +
+                    "<title>Italian</title>" +
+                    "<title>Spanish</title>"
+                    + "</book>" + "</bookstore>";
+
+        var parser = new DOMParser();
+        var xm1DOM = parser.parseFromString(text,"text/xml");
+        var title = xm1DOM.getElementsByTagName("title")[1];
+        if(title)
+        {
+            title.textContent+="-Modified";
+            document.getElementById("demo1").innerText = title.textContent;
+        }
+        
+        var sel = new XMLSerializer();
+        var sXML = sel.serializeToString(xm1DOM);
+        document.getElementById("demo2").innerText = sXML;
+
+    </script>
+    </body>
+</html>

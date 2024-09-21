@@ -1,0 +1,60 @@
+h1{
+    text-align: center;
+    text-shadow: 4px 4px 4px black;
+    color:aqua;
+}
+li:hover{
+    color:red;
+    background-color: beige;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+    background-image:url(google.png);
+    background-repeat: no-repeat;
+    /* background-position-y: top;
+    background-position-x: right; */
+    background-position: right top;
+    background-size: 640px,216px;
+
+    
+} 
+body:active{
+    color:blueviolet;
+    background-color: aqua;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+p
+{
+
+    background-color: chocolate;
+}
+.abc1
+{
+    position:relative;
+  
+}
+.abc2{
+    position:static;
+  
+}
+.abc3
+{
+    padding:30px;
+    border:3px;
+    top:10px;
+    position:sticky;
+
+}
+.abc4
+{
+    position:absolute;
+
+}
+.abc5
+{
+position:fixed;
+
+}

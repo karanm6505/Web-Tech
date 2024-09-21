@@ -1,0 +1,70 @@
+<html>
+    <style>
+        p#x
+        {
+            background-color: aqua;
+        }
+    </style>
+    <body>
+        <h1> HTML</h1>
+        <h1> JS </h1>
+        <p id="x" onclick="myGreeting()" ondblclick="myGreeting1()" onmouseover>Hello</p>
+        <p class = "c"></p>
+        <p class = "d"></p> <!--onmouseover-->
+        <button onmouseover="document.getElementById('demo').innerHTML=Date()">The time is:</button>
+        
+        <p id="demo"></p>
+
+        <script>
+        document.addEventListener("click",function(){document.getElementById("demo").innerHTML="Hello World"})
+        function myGreeting()
+        {
+            setTimeout(function(){document.write("Timeout" + "<br>")},5000);
+        }
+        function myGreeting1()
+        {
+            setInterval(function(){document.write("Interval" + "<br>")},1000);
+        }
+        function getInnerText()
+        {
+            let text = document.getElementById("x").innerText;
+
+        }
+
+           // document.getElementById("demo").innerText = "<br> Hello World <br>"
+           // document.getElementsByTagName("h1")[0].innerHTML = "Hi zro"
+           // document.getElementsByClassName("c")[0].innerText = "hello"
+            //document.querySelector && document.querySelectorALl
+        </script>
+    </body>
+    <audio controls loop>
+        <source src="/Users/karanm/Library/Group Containers/UBF8T346G9.Office/SolutionPackages/2fe5cb8801345ff8fd19138faa9c8794/PackageResources/fluidhost/static/media/wl_completion_sound.13a69e47a3545eb5ac81.mp3" 
+        type = "audio/mp3">
+    </audio>
+    <br>
+    <br>
+    <video controls autoplay muted>
+        <source src="/Users/karanm/Downloads/Average_school_days.mp4"
+        type = "video/mp4">
+    </video>>
+    <br>
+    <br>
+    
+    <progress value=i max="100" id="prog">
+    </progress>
+    <script>
+        // var i;
+        // for(i=10;i<100;i+=10)
+        // {
+        //     document.getElementById(prog).nodeValue=i
+
+        // }
+        var a,b;
+        add = (a,b) => { return a+b};
+        //var sum = add(9,8)
+        document.write(add(9,8))
+            
+    </script> 
+    
+</html>
+ 

@@ -1,0 +1,78 @@
+<html>
+<script src="jquery-3.7.1.js"> 
+</script>
+<script>
+function loaddata()
+{
+    let xhr = new XMLHttpRequest();
+    xhr.open("get","sample.txt",true);
+    xhr.onreadystatechange=showdata;
+    xhr.responseType="url";
+    xhr.send();
+}
+function showdata()
+{
+    if(this.readyState==4 && this.status==200)
+    {
+        
+        document.querySelector("#container").innerHTML = this.responseText;
+    }
+    // if(this.status!=200)
+    // {
+    //     document.querySelector("#container").innerText = this.status;
+    // }
+    // if(this.readyState ==4)
+    // {
+    //     document.querySelector("#container").innerText = this.readyState;
+    // }
+}
+function getdata()
+{
+    $.ajax({
+        url: "hi.txt",
+        method: 'get',
+        success: function(result){
+            $("#div1").html(result);
+        }
+    });
+    $.get("hi.txt",function(data,status){
+        alert("Data:"+data+"\nStatus: "+status);
+    });
+}
+function fetchdata()
+{
+    mydiv = document.querySelector("#container");
+    fetch('sample.text')
+    .then(function(response){
+        return response.text();
+    })
+    .then(function(text){
+        mydiv.innerHTML=text;
+    })
+    .catch(function(error)
+    {
+        alert(error.message);
+    });
+}
+
+</script>
+<script>
+    $(document).ready(function()
+    {
+        $("button").dblclick(function()
+        {
+            $("#container").hide();
+        });
+
+    });
+
+</script>
+<body>
+    <div id="container">
+    </div>
+    <div id="div1">   
+    </div>
+    <button onclick="loaddata()" ondblclick="hidedata()" onmouseover="fetchdata()">Load Data!</button>
+    <button onclick="getdata()">Get Data</button>
+</body>
+</html>

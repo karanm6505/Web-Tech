@@ -1,0 +1,80 @@
+<html>
+    <style>
+        input[type="button"]{
+            color:aqua
+        }
+        input[value~="male"]
+        {
+            text-decoration-color: aqua;
+        }
+    </style>
+    <head>
+        <title>
+            Hello!
+        </title>
+    </head>
+    <body>
+            <a href = "https://www.google.com" target="_blank"> Google
+                <!-- <img src="google.png" alt="google" width="1280px" height="433px">
+            </a>> -->
+            <a href = "abc.js">
+                Java Script
+            </a>
+        <br/>
+        <br/>
+            <form>
+            <fieldset>
+                Enter name:<input style= "background-color: red" type="text" name="name" placeholder="hi" required>
+                <br/> 
+                <br/>
+                Enter address:<textarea name="add"></textarea>
+                <br/>
+                <br/>
+            </fieldset>
+                Gender:
+                <br/>
+                <input type="radio" name="gender" value="male">MALE <!--checked-->
+                <br/>
+                <input type="radio" name="gender" value="female">FEMALE
+                <br/>
+                Semester:
+                <br/>
+                <input type="checkbox" name="sem" value="1">1st
+                <br/>
+                <input type="checkbox" name="sem" value="3">3rd
+                <br/>
+                <input type="checkbox" name="sem" value="5">5th
+                <br/>
+                <input type="checkbox" name="sem" value="7">7th
+                <br/>
+                Country:
+                <br/>
+                <select name="country"> <!--multiple can be used in this tag-->
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Australia">Australia</option>
+                    <option value="NZ">NZ</option>
+                </select>
+                <input type="button" value="Submit Form">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <br/>
+                <br/>
+                <input type="date">
+                <br/>
+                <br/>
+                <input type="color">
+                <br/>
+                <br/>
+                <input type="range" min="-10" max="10" step="2" value="-10">
+                <br/>
+                <br/>
+                <input type="tel" pattern="[6-9]{1}[0-9]{9}">
+                <br/>
+                <br/>
+                <input type="email">
+
+            </form>
+    </body>
+</html>

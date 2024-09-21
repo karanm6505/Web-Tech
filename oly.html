@@ -1,0 +1,192 @@
+<html>
+<head>
+    <img id = "photo" src = "/Users/karanm/Desktop/HTML/2024_Summer_Olympics_logo.svg">
+    <title>Olympics Games 2024 Paris</title>
+    
+    <style>
+        #photo
+        {
+            float: right;
+        }
+        title
+        {
+            text-align: left;  
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E6F7FF;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 75%;
+            margin: auto;
+            padding-top: 20px;
+        }
+        h1, h2 {
+            text-align: left;
+        }
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+        width: 33.33%;
+    }
+    th {
+        background-color: #007BFF;
+        color: white;
+    }
+    td {
+        background-color: white;
+        color: black;
+    }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group.inline {
+            display: flex;
+            align-items: center;
+        }
+        .form-group.inline label {
+            margin-bottom: 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons input[type="submit"],
+        .buttons input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #eeff00;
+            color: white;
+            cursor: pointer;
+        }
+        .buttons input[type="reset"] {
+            background-color: #FF5733;
+        }
+    </style>
+</head>
+<body>
+   <div class="container"> 
+    <h2>Olympic Games 2024 Paris</h2>
+    <h3>Olympics Games 2024 Highlights</h3>
+
+    <table border="1" cellpadding="5" cellspacing="0" width="50%">
+        <tr bgcolor="#f2f2f2">
+            <th colspan="2">Event</th>
+            <th>Date</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Opening Ceremony</td>
+            <td>26 July 2024</td>
+            <td>26 July 2024</td>
+            <td>Paris, France</td>
+        </tr>
+        <tr>
+            <td>27 July 2024</td>
+            <td>26 July 2024</td>
+            <td>Nice, France</td>
+        </tr>
+        <tr>
+            <td colspan="2">Closing Ceremony</td>
+            <td>11 August 2024</td>
+            <td>Paris, France</td>
+        </tr>
+    </table><br>
+
+        <h2>Survey Form</h2>
+
+        <form id="surveyForm" onsubmit="handleSubmit()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Mobile Number:</label>
+                <input type="tel" pattern="[6-9]{1}[0-9]{9}"id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group inline">
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male   </label> 
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <div class="form-group">
+                <label for="event">Favorite Event:</label>
+                <select id="event" name="event">
+                    <option value="ath"> Athletics </option>
+                    <option value="fb">Football</option>
+                    <option value="bb">Basketball</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Preferred Date for Attending:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group inline">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+    <script>
+        function handleSubmit() {
+            var name = document.getElementById("name").value;
+            alert("Thank you, successfully submitted " + name + "!");
+            document.getElementById("surveyForm").reset(); // Reset the form fields
+        }
+    </script>
+</body>
+</html>

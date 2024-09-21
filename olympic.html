@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.event-table thead th {
+    background-color: #0078d7;
+    color: white;
+    padding: 10px;
+}
+
+.event-table tbody td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.event-table tbody td[rowspan] {
+    vertical-align: top;
+}
+
+.event-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+    </style>
+    
+    <title>Event Table</title>
+    
+</head>
+<body>
+
+    <table class="event-table">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">Opening Ceremony</td>
+                <td>Main Stadium</td>
+                <td>26 July 2024</td>
+            </tr>
+            <tr>
+                <td>Beach Events</td>
+                <td>27 July 2024</td>
+                <td>Nice, France</td>
+            </tr>
+            <tr>
+                <td>Closing Ceremony</td>
+                <td>11 August 2024</td>
+                <td>Paris, France</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

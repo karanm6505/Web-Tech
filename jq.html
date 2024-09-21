@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+    img
+    {
+        display: none;
+    }
+</style>
+<script src="jquery-3.7.1.js"> 
+</script>
+<script>
+	
+   /* $(document).ready(function()
+    {
+        $("#b1").click(function()
+        {
+            //$("a[target='_blank']").hide();
+            //$("*").hide();
+            //$(this).hide();
+        });
+        $("#b1").dblclick(function()
+        {
+            $("a[target='_blank']").show();
+        });
+        
+    }); */
+    $(document).ready(function()
+    {
+        $("button").click(function()
+        {
+            $("img").toggle(5000);
+            $("#div").toggle(5000);
+        });
+
+    });
+        
+    </script>
+</head>
+<body>
+
+	<h2 class="intro">H2 Tag with Class name "Intro"</h2>
+    <div id="div" style="background-color: red; width: 500px; height: 250px;">
+    </div>
+
+	<p>Paragraph-1</p>
+	<p class="intro">Paragraph-2 with Class name "Intro"</p>
+	<p>Paragraph-3</p>
+    <img src="/Users/karanm/Desktop/HTML/google.png" width="100px" height="100px"/>
+	<p><a href="https://www.pes.org" target="_blank">Paragraph-4 with target as _blank</a></p>
+	
+	<p><a href="https://www.pes.org">Paragraph-5</a></p>
+
+	<p>List 1:</p>
+	<ul>
+	  <li>Coffee</li>
+	  <li>Milk</li>
+	  <li>Tea</li>
+	</ul>
+
+	<p>List 2:</p>
+	<ul>
+	  <li>Coffee</li>
+	  <li>Milk</li>
+	  <li>Tea</li>
+	</ul>
+
+	<button id="b1">Hide me</button>
+    <button id="b2">Show me</button>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head> <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+ </head>
+    <body>
+        
+              <div id="container">
+        </div>
+    <script type="text/babel">
+        var dest1 = document.querySelector("#container");
+        // class Helloworld extends React.Component{
+        //     render(){
+        //         return <h1>  {this.props.children}</h1> 
+        //     }
+        // }
+        // ReactDOM.render(
+        //     <div>
+        //         <Helloworld>bye</Helloworld>
+        //     </div> ,dest
+        // );   
+        // class Colour extends React.Component{
+        //     render()
+        //     {
+        //         return <h1 style ={{backgroundColor:"lightblue",color:"green"}}>Coloured</h1>
+        //     }
+        // }
+        // ReactDOM.render(
+        //     <div>
+        //         <Colour/>
+        //     </div> , dest
+        // );
+        class Letter extends React.Component{
+            render()
+            {
+                var letterstyle={
+                    backgroundColor:this.props.colour,
+                    color:this.props.colour1,
+                    display:"inline-block",
+                    padding:"25px",
+                    margin:"25px"
+                }
+            
+            return <div style={letterstyle}>{this.props.children}</div>;
+            }
+        };
+        ReactDOM.render(
+            <div>
+                <Letter colour="red" colour1="blue"> A </Letter>
+                <Letter colour="blue" colour1="yellow"> B </Letter>
+                <Letter colour="yellow" colour1="green"> C </Letter>
+                <Letter colour="green" colour1="purple"> D </Letter>
+                <Letter colour="purple" colour1="red"> E </Letter>
+            </div>,dest1
+        );
+
+    </script>
+
+  
+
+    </body>
+</html>
