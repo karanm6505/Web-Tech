@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- Include jQuery via CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p class="para">Hello Hello Hello</p>
+    <button id="button1">hide me!</button>
+    <button id="button2">show me!</button>
+    <button id="button3">destroy me!</button>
+
+    <script>
+        $(document).ready(function() {
+            // Hide paragraph when button1 is clicked
+            $("#button1").click(function() {
+                $(".para").hide();
+            });
+
+            // Show paragraph when button2 is clicked
+            $("#button2").click(function() {
+                $(".para").show();
+            });
+
+            // Hide all elements when button3 is clicked, except button3 itself
+            $("#button3").click(function() {
+                $("body *").not("#button3").hide();
+            });
+
+            // Show everything again when hovering over button3
+            $("#button3").mouseover(function() {
+                $("body *").show();
+            });
+        });
+
+        $("p:even").appendTo("#contents");
+    </script>
+
+    <div id="contents">
+    </div>
+    <p> Hello 1</p>
+    <p> Hello 2</p>
+    <p> Hello 3</p>
+</body>
+</html>

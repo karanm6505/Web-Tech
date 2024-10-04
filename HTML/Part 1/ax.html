@@ -74,26 +74,25 @@
 
         div1.addEventListener("click", function () {
             alert("Component 1 event clicked");
-        },false);
+        },true);
 
         div2.addEventListener("click", function () {
             alert("Component 2 event clicked");
-        },true);
-
-        div3.addEventListener("click", function () {
-            alert("Component 3 event clicked");
         },false);
+
+        div3.addEventListener("click", stopPropogation()
+        ,false);
 		div4.addEventListener("click", function () {
             alert("Component 4 event clicked");
-        },true);
+        },false);
 
         div5.addEventListener("click", function () {
             alert("Component 5 event clicked");
-        },false);
+        },true);
 
         div6.addEventListener("click", function () {
             alert("Component 6 event clicked");
-        },true);
+        },false);
     </script>
 
 

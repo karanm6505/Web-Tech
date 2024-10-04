@@ -1,0 +1,57 @@
+<!--parent and child classes-->
+
+
+<html>
+    <head> 
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <script type="text/babel">
+        var dest = document.querySelector("#main");
+        class ResImage extends React.Component
+        {
+            render()
+            {
+                return <img src = {this.props.src}/>
+            }
+        }
+        class ResText extends React.Component
+        {
+            render()
+            {
+                return <a href = {this.props.link}>{this.props.linktext}</a>
+            }
+        }
+        class ResCaption extends React.Component
+        {
+            render()
+            {
+                return <p>{this.props.caption}</p>
+            }
+        }
+        class ParentRes extends React.Component
+        {
+            render()
+            {
+                return (
+                    <div>
+                        <ResImage src = "/Users/karanm/Desktop/HTML/Random Files/google.png"/>
+                        <ResText link = "https://www.google.com/" linktext = "google"/>
+                        <ResCaption caption = "google | search engine"/>
+        
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <ParentRes/>,dest
+        );
+    </script>
+    <body>
+        <div id = main>
+        </div>
+    </body>
+</html>

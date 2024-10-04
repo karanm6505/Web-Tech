@@ -1,0 +1,38 @@
+<html>
+    <head>
+    </head>
+    <style>
+        a:hover
+        {
+            background-color: gold;
+        }
+        /* a:visited
+        {
+            background-color: black;
+        }
+        a:link
+        {
+            background-color:blueviolet; */
+        
+    </style>
+    <body>
+        <div id="main">
+        <p id="p1">Paragraph 1</p>
+        </div>
+        <p id="p2">Paragraph 2</p>
+        <div id = "container"></div>
+        <a href="https://google.com">Google Link!</a>
+        <script>
+            let x = document.querySelector("#p1");
+            // let p = document.getElementById("#main");
+            // x.nextElementSibling.innerHTML = "updated";
+            // console.log(x.parentNode);
+            // x.parentNode.removeChild(x.nextElementSibling);
+            // p.appendChild("#p2");
+            let div = document.querySelector("#container");
+            let p = document.createElement('p');
+            p.textContent = 'JS DOM';
+            div.appendChild(p);
+        </script>
+    </body>
+</html>

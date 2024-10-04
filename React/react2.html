@@ -1,0 +1,75 @@
+<!--counter and stateless functions-->
+
+
+<html>
+    <head> 
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script src="/Users/karanm/Desktop/HTML/JS/jquery-3.7.1.js"></script>
+    </head>
+    <script type = "text/babel">
+        class Counter extends React.Component
+        {
+            constructor(props)
+            {
+                super(props);
+                this.state = {seconds:0};
+                this.timer = this.timer.bind(this);
+            }
+            timer()
+            {
+                this.setState((prevState) => ({ seconds: prevState.seconds + 1 }));
+            }
+            componentDidMount()
+            {
+            
+                this.interval = setInterval(this.timer,1000);
+            }
+            componentWillUnmount()
+            {
+                clearInterval(this.timerID);
+            }
+            render()
+            {
+                return <div><h1>{this.state.seconds}</h1>
+                <p>these many seconds since page loaded</p></div>;
+            }
+        }
+        class CounterDisplay extends React.Component
+        {
+            render()
+            {
+                return(<Counter/>);
+            }
+        }
+        ReactDOM.render(
+            <CounterDisplay />,
+            document.getElementById('main')
+        );
+        function Stuff1(props) 
+        {
+            return <p> {props.text} </p>
+        };
+        function Stuff2()
+        {
+            return <p> Stuff 2 </p>
+        };
+        const root = ReactDOM.createRoot(document.querySelector("#root"));
+        root.render(
+            <div>
+                <Stuff1 text="Stuff 1"/>
+                <Stuff2/>
+            </div>
+        );
+    </script>
+    <body>
+        <div id = "main">
+        </div>
+        <div id = "root">
+        </div>
+    </body>
+</html>
