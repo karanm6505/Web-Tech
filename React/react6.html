@@ -1,0 +1,42 @@
+<!--random react program-->
+
+<html>
+    <head> 
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/babel">
+            class MyDiv extends React.Component{
+                constructor(props){
+                super(props);
+
+                this.setRef = (e1) => this.myRef = e1;
+
+                this.showChar = (event) =>{
+                    this.myRef.innerHTML+=event.key}
+                }
+            
+                render() {
+                    return (
+                        <div>
+                            <input onKeyUp={this.showChar} type="text" />
+                            <h1 ref={this.setRef}></h1>
+                        </div>
+                    ); 
+                    //can use other keyboard events and also onChange
+                }
+            }
+            const root = ReactDOM.createRoot(document.querySelector("#dest"));
+            root.render(
+                <MyDiv/>
+            );
+        </script>
+    </head>
+    <body>
+        <div id="dest">
+            
+        </div>
+    </body>
+</html>
