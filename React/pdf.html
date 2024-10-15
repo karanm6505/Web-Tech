@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #pdf-viewer {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 500px; /* Set height for the iframe */
+            display: none; /* Hide initially */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Viewer</h1>
+        <button id="load-pdf">Load PDF</button>
+        <div id="pdf-viewer">
+            <iframe id="pdf-iframe"></iframe>
+        </div>
+    </div>
+    <script>
+        // Developer should specify the PDF file path here
+        const pdfFilePath = '/Users/karanm/Desktop/HTML/Data Structures And Program Design In C.pdf'; // Change this to your PDF file path
+
+        document.getElementById('load-pdf').addEventListener('click', function() {
+            const pdfIframe = document.getElementById('pdf-iframe');
+
+            // Set the src of the iframe to the PDF file
+            pdfIframe.src = pdfFilePath;
+            pdfIframe.style.display = 'block'; // Show the iframe
+        });
+    </script>
+</body>
+</html>

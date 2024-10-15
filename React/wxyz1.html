@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Viewer with Developer Uploaded Files</title>
-
-    <!-- Highlight.js dark theme for syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
-    
-    <!-- Line numbers plugin for highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/line-numbers.min.css">
-
     <style>
         
-        body {
+        body 
+        {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: #0d1117;
             color: #c9d1d9;
@@ -62,22 +55,19 @@
             border: 1px solid #30363d;
         }
 
-        pre code {
+        pre code 
+        {
             font-size: 14px;
             line-height: 1.5;
         }
-        .hljs-ln-numbers {
-    padding-right: 20px !important;
-    text-align: right;
-    border-right: 1px solid #606060;
-    color: #606060;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
+        .hljs-ln-numbers 
+        {
+            padding-right: 20px !important;
+            text-align: right;
+            border-right: 1px solid #606060;
+            color: #606060;
+            
+        }
 
 .hljs-ln-code {
     padding-left: 20px !important;
@@ -87,25 +77,21 @@
 <body>
 
     <h1>Developer Uploaded Files Viewer</h1>
-
-    <!-- Tabs for selecting programs -->
     <div class="tabs">
-        <div class="tab active" data-file="react1.html">HTML Example</div>
-        <div class="tab" data-file="react2.html">JavaScript Example</div>
-        <div class="tab" data-file="react3.html">Python Example</div>
+        
+        <div class="tab active" data-file="react4.html">React 1</div>
+        <div class="tab" data-file="react5.html">React 2</div>
+        <div class="tab" data-file="react5.html">React 3</div>
+        <div class="tab" data-file="react5.html">React 4</div>
+        <div class="tab" data-file="react5.html">React 5</div>
+        <div class="tab" data-file="react6.html">React 6</div>
     </div>
-
-    <!-- Code display area -->
     <pre id="codeBlock"><code class="language-html"></code></pre>
-
-    <!-- Highlight.js for syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-
-    <!-- Line numbers plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 
     <script>
-        // Function to fetch file content and display it
+        
         function displayCode(fileName) {
             fetch(fileName)
                 .then(response => {
@@ -117,8 +103,6 @@
                 .then(content => {
                     const codeBlock = document.querySelector('pre code');
                     codeBlock.textContent = content;
-
-                    // Remove previous language class and determine new class
                     const extension = fileName.split('.').pop();
                     const languageClass = {
                         'html': 'language-html',
@@ -126,12 +110,10 @@
                         'py': 'language-python'
                     }[extension];
 
-                    codeBlock.className = ''; // Clear previous class
+                    codeBlock.className = ''; 
                     if (languageClass) {
-                        codeBlock.classList.add(languageClass); // Add language class based on extension
+                        codeBlock.classList.add(languageClass); 
                     }
-
-                    // Highlight and add line numbers
                     hljs.highlightElement(codeBlock);
                     hljs.lineNumbersBlock(codeBlock);
                 })
@@ -150,8 +132,6 @@
                 displayCode(this.getAttribute('data-file'));
             });
         });
-
-        // Initial display of the first file (file1.html)
         displayCode(tabs[0].getAttribute('data-file'));
     </script>
 </body>
