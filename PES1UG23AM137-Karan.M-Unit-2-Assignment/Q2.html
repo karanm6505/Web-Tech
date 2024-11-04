@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Tasks</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #myDiv {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="prependTextBtn">Prepend Text</button>
+    <button id="appendTextBtn">Append Text</button>
+    <button id="hideDivBtn">Hide Div</button>
+    <button id="unhideDivBtn">Unhide Div</button>
+    <button id="changeColorBtn">Change Text Color</button>
+
+
+    <div id="container0">
+        <div id="container1"></div>
+        <p>-------------------------------------------</p>
+        <p class="filterMe">Web Tech</p>
+        <p>-------------------------------------------</p>
+        <div id="container2"></div>
+
+    <script>
+        $('#prependTextBtn').click(function () {
+            $('#container1').fadeOut(500, function () {
+                $(this).prepend('jQuery is awesome! ').fadeIn(500);
+            });
+        });
+        $('#appendTextBtn').click(function () {
+            $('#container2').slideUp(500, function () {
+                $(this).append(' jQuery is awesome!').slideDown(500);
+            });
+        });
+        $('#hideDivBtn').click(function () {
+            $('#container1').fadeOut(500);
+        });
+        $('#unhideDivBtn').click(function () {
+            $('#container1').fadeOut(500).fadeIn(500);
+        });
+        $('#changeColorBtn').click(function () {
+            $('.filterMe').each(function () {
+                let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                $(this).css('color', randomColor);
+            });
+        });
+    </script>
+
+</body>
+</html>

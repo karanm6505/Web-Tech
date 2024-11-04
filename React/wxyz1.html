@@ -1,0 +1,138 @@
+<html>
+<head>
+    <title>Code Viewer with Developer Uploaded Files</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/styles/line-numbers.min.css">
+    <style>
+        
+        body 
+        {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #58a6ff;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #30363d;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background-color: #161b22;
+            color: #c9d1d9;
+            margin-right: 10px;
+            border: 1px solid transparent;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #238636;
+            color: white;
+        }
+
+        .tab.active {
+            background-color: #238636;
+            color: white;
+            border-bottom: 2px solid #0d1117;
+        }
+
+        pre {
+            border-radius: 6px;
+            padding: 16px;
+            overflow-x: auto;
+            background-color: #161b22;
+            margin-top: 20px;
+            border: 1px solid #30363d;
+        }
+
+        pre code 
+        {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .hljs-ln-numbers 
+        {
+            padding-right: 20px !important;
+            text-align: right;
+            border-right: 1px solid #606060;
+            color: #606060;
+            
+        }
+
+.hljs-ln-code {
+    padding-left: 20px !important;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Developer Uploaded Files Viewer</h1>
+    <div class="tabs">
+        
+        <div class="tab active" data-file="react4.html">React 1</div>
+        <div class="tab" data-file="react5.html">React 2</div>
+        <div class="tab" data-file="react5.html">React 3</div>
+        <div class="tab" data-file="react5.html">React 4</div>
+        <div class="tab" data-file="react5.html">React 5</div>
+        <div class="tab" data-file="react6.html">React 6</div>
+    </div>
+    <pre id="codeBlock"><code class="language-html"></code></pre>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+    <script>
+        
+        function displayCode(fileName) {
+            fetch(fileName)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(content => {
+                    const codeBlock = document.querySelector('pre code');
+                    codeBlock.textContent = content;
+                    const extension = fileName.split('.').pop();
+                    const languageClass = {
+                        'html': 'language-html',
+                        'js': 'language-javascript',
+                        'py': 'language-python'
+                    }[extension];
+
+                    codeBlock.className = ''; 
+                    if (languageClass) {
+                        codeBlock.classList.add(languageClass); 
+                    }
+                    hljs.highlightElement(codeBlock);
+                    hljs.lineNumbersBlock(codeBlock);
+                })
+                .catch(error => console.error('Error fetching file:', error));
+        }
+
+        // Set up tab switching functionality
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                // Fetch and display the file content
+                displayCode(this.getAttribute('data-file'));
+            });
+        });
+        displayCode(tabs[0].getAttribute('data-file'));
+    </script>
+</body>
+</html>
