@@ -1,0 +1,134 @@
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+  }
+  
+  /* Syntax highlighting customization */
+  .syntax-highlighter {
+    border-radius: 8px !important;
+    padding: 1rem !important;
+    margin: 0 !important;
+    background-color: #1a1a1a !important;
+  }
+  
+  /* Animation for tab transitions */
+  .tab-transition {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Custom file upload button */
+  .file-upload-btn {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .file-upload-btn input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    cursor: pointer;
+    display: block;
+  }
+  
+  /* Editor textarea customization */
+  .code-editor {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+    line-height: 1.5;
+    tab-size: 2;
+    -moz-tab-size: 2;
+  }
+  
+  /* Toast notification styles */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #2d3748;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Loading spinner */
+  .spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 3px solid #4299e1;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .container {
+      padding: 0.5rem;
+    }
+    
+    .tabs {
+      flex-wrap: wrap;
+    }
+    
+    .tab {
+      flex: 1 1 auto;
+      min-width: 120px;
+    }
+  }
+  
+  /* Dark mode enhancements */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #1a202c;
+      color: #e2e8f0;
+    }
+    
+    .card {
+      background-color: #2d3748;
+    }
+    
+    .input {
+      background-color: #4a5568;
+      color: #e2e8f0;
+    }
+  }
